@@ -2,39 +2,39 @@
 
 CREATE TABLE Estudo(
     Codigo					  int,
-    Titulo					  varchar(50),
+    Titulo					  varchar(100)		not null,
     Estado					  int,
-    Data					  date,
     Num_Part				  int,
     Num_Vagas				  int,
     Renum					  money,
     CC_Inv					  char(8),
+	Phase_StartDate			  date,
 
     PRIMARY KEY (Codigo),
 );
 
 CREATE TABLE Tipo_Estado(
 	Codigo					INT,
-	Tipo					VARCHAR(50),
+	Tipo					VARCHAR(50)			not null,
 
 	PRIMARY KEY(Codigo)
 )
 
 CREATE TABLE Ensaio_Clinico(
     Codigo					 int,
-    Cod_Inf					 char(8),
-    Cod_CEIC				 char(8),
+    Cod_Inf					 char(8)			not null,
+    Cod_CEIC				 char(8)			not null,
     Cod_Proc				 char(8),
     Follow_Up			     Bit,
     Num_Tomas			     int,
-    Cod_Tipo				 int,
+    Cod_Tipo				 int				not null,
 
     PRIMARY KEY (Codigo),
 );
 
 CREATE TABLE Estudo_Investigacao(
     Cod_Est					 int,
-    Cod_Tipo				 int,
+    Cod_Tipo				 int				not null,
     Num_Sessoes			     int,
 
     PRIMARY KEY (Cod_Est),
@@ -52,8 +52,11 @@ CREATE TABLE Participante(
     Renum_Total				 money,
     Idade					 int,
     Cod_Analises			 char(8),
+	Join_Date				 date,
 
-	PRIMARY KEY(ID)
+	PRIMARY KEY(ID),
+	UNIQUE(CC),
+	CHECK(Renum_Total >= 0)
 )
 
 CREATE TABLE Participa_EC(
@@ -74,21 +77,21 @@ CREATE TABLE Participa_EI(
 
 CREATE TABLE Tipo_EC(
 	Codigo					INT,
-	Tipo					VARCHAR(50),
+	Tipo					VARCHAR(50)			not null,
 
 	PRIMARY KEY(Codigo)
 )
 
 CREATE TABLE Tipo_EI(
 	Codigo					INT,
-	Tipo					VARCHAR(50),
+	Tipo					VARCHAR(50)			not null,
 
 	PRIMARY KEY(Codigo)
 )
 
 CREATE TABLE Farmaceutica(
-	Cod_Ref					CHAR(8),
-	Nome					VARCHAR(50),
+	Cod_Ref					INT,
+	Nome					VARCHAR(100),
 	Endereco				VARCHAR(100),
 	Num_telefone			CHAR(9),
 	
@@ -97,7 +100,7 @@ CREATE TABLE Farmaceutica(
 
 CREATE TABLE Farmaco(
 	Cod_GTIN				CHAR(14),
-	Ref_Farmaceutica		CHAR(8),
+	Ref_Farmaceutica		INT,
 	Nome					VARCHAR(50),
 	Cod_Formula				CHAR(8),
 	Subst_Ativa				VARCHAR(50),
@@ -114,18 +117,19 @@ CREATE TABLE EC_Farmaco(
 
 CREATE TABLE Investigador(
 	CC						CHAR(8),
-	Nome					VARCHAR(50),
+	Nome					VARCHAR(100),
 	Email					VARCHAR(100),
 	Num_Estudos				INT			DEFAULT 0,
 	EntPatronal				INT,
+	Join_Date				DATE,
 
 	PRIMARY KEY(CC),
-	CHECK(Num_Estudos > 0)
+	CHECK(Num_Estudos >= 0)
 )
 
 CREATE TABLE EntPatronal(
 	Num_Registo				INT,
-	Nome					VARCHAR(50),
+	Nome					VARCHAR(100),
 	Endereco				VARCHAR(100),
 	Num_telefone			CHAR(9),
 	IBAN					CHAR(25),
@@ -137,7 +141,7 @@ CREATE TABLE EntPatronal(
 
 CREATE TABLE Tipo_EntPatronal(
 	Codigo					INT,
-	Tipo					VARCHAR(50),
+	Tipo					VARCHAR(50)			not null,
 
 	PRIMARY KEY(Codigo)
 )
@@ -150,11 +154,11 @@ ALTER TABLE Estudo ADD CONSTRAINT FK_Estudo_Tipo FOREIGN KEY (Estado) REFERENCES
 
 --Ensaio_Clinico
 ALTER TABLE Ensaio_Clinico ADD CONSTRAINT FK_Estudo_EC FOREIGN KEY (Codigo) REFERENCES Estudo (Codigo) ON UPDATE CASCADE ON DELETE CASCADE;
-ALTER TABLE Ensaio_Clinico ADD CONSTRAINT FK_Ensaio_Tipo FOREIGN KEY (Cod_Tipo) REFERENCES Tipo_EC (Codigo) ON UPDATE CASCADE ON DELETE set null;
+ALTER TABLE Ensaio_Clinico ADD CONSTRAINT FK_Ensaio_Tipo FOREIGN KEY (Cod_Tipo) REFERENCES Tipo_EC (Codigo) ON UPDATE CASCADE ON DELETE CASCADE;
 
 --Estudo_Investigacao
 ALTER TABLE Estudo_Investigacao ADD CONSTRAINT FK_Estudo_EI FOREIGN KEY (Cod_Est) REFERENCES Estudo (Codigo) ON UPDATE CASCADE ON DELETE CASCADE;
-ALTER TABLE Estudo_Investigacao ADD CONSTRAINT FK_EC_Tipo FOREIGN KEY (Cod_Tipo) REFERENCES Tipo_EI (Codigo) ON UPDATE CASCADE ON DELETE set null;
+ALTER TABLE Estudo_Investigacao ADD CONSTRAINT FK_EC_Tipo FOREIGN KEY (Cod_Tipo) REFERENCES Tipo_EI (Codigo) ON UPDATE CASCADE ON DELETE CASCADE;
 
 alter table Participa_EC
 		add constraint FK_ParticipaEC_Participante foreign key (ID_Participante) references Participante(ID) on update cascade on delete cascade;
@@ -181,4 +185,4 @@ alter table Investigador
 		add constraint FK_Investigador_EntPatronal foreign key (EntPatronal) references EntPatronal(Num_Registo) on update cascade on delete set null;
 
 alter table EntPatronal
-		add constraint FK_EntPatronal_Tipo foreign key (Tipo_EntPatronal) references Tipo_EntPatronal(Codigo) on update cascade on delete set null;
+		add constraint FK_EntPatronal_Tipo foreign key (Tipo_EntPatronal) references Tipo_EntPatronal(Codigo) on update cascade on delete cascade;

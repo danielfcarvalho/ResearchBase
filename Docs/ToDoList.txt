@@ -1,0 +1,20 @@
+TRIGGERS:
+-> Mudança de estado do estudo de 2->3: Pagar aos participantes do Estudo
+
+PROCESSO DE RECRUTAMENTO:
+-> SP/View para apresentar os Participantes que obedecem aos critérios seleccionados 
+pelo Investigador.
+	-SP recebe como parâmetros: Gender, MinAge, MaxAge
+		- Confirmar que as idades são >0 e que MaxAge > MinAge
+	-Ensaios Clinicos: View com Participa_EC para apresentar apenas participantes
+que obedeçam à regra de 2 EC por anos e ao de remuneração por ano
+	Mostrar apenas participantes com análises clinicas em dia
+
+-> Investigador selecciona um participante e carrega num botão Add para adicionar ao
+estudo
+	- SP para fazer insert do participante no estudo
+	- Incrementar o número de participantes no registo do estudo
+	- Se Nº de Participantes = Nº de vagas: Mostrar aviso
+	
+-> Investigador clica no botão para finalizar recrutamento:
+	- Mudar o estado do estudo para Ativo
