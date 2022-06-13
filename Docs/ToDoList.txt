@@ -1,6 +1,11 @@
-TRIGGERS:
--> Mudança de estado do estudo de 2->3: Pagar aos participantes do Estudo
+PÁGINA DOS ESTUDOS E DO RECRUTAMENTO:
 
+TODO:
+-> Mudança de estado do estudo de 2->3: Pagar aos participantes do Estudo
+-> Adicionar Estudos (Fazer inser em Estudo e no subtipo)
+
+
+DONE:
 PROCESSO DE RECRUTAMENTO:
 -> SP/View para apresentar os Participantes que obedecem aos critérios seleccionados 
 pelo Investigador.

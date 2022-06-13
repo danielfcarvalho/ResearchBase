@@ -47,6 +47,3 @@ WHILE @i <= 80
 		SET @i += 1;
 	END
 GO
-
-SELECT * FROM Participa_EC;
-SELECT * FROM Estudo_Investigacao JOIN Estudo ON Estudo_Investigacao.Cod_Est = Estudo.Codigo;
