@@ -25,7 +25,7 @@ AS
 	END
 GO
 
--- Participante recrutado para um novo estudo
+-- Atualização do número de participantes após recrutamento de um novo participante recrutado para estudo
 
 GO
 CREATE TRIGGER acceptEC ON Participa_EC
