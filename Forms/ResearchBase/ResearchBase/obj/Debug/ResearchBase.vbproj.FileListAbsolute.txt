@@ -1,0 +1,15 @@
+C:\Users\35193\source\repos\ResearchBase\ResearchBase\obj\Debug\ResearchBase.vbproj.AssemblyReference.cache
+C:\Users\35193\source\repos\ResearchBase\ResearchBase\obj\Debug\ResearchBase.vbproj.SuggestedBindingRedirects.cache
+C:\Users\35193\source\repos\ResearchBase\ResearchBase\obj\Debug\ResearchBase.Main.resources
+C:\Users\35193\source\repos\ResearchBase\ResearchBase\obj\Debug\ResearchBase.Estudos.resources
+C:\Users\35193\source\repos\ResearchBase\ResearchBase\obj\Debug\ResearchBase.Resources.resources
+C:\Users\35193\source\repos\ResearchBase\ResearchBase\obj\Debug\ResearchBase.vbproj.GenerateResource.cache
+C:\Users\35193\source\repos\ResearchBase\ResearchBase\obj\Debug\ResearchBase.vbproj.CoreCompileInputs.cache
+C:\Users\35193\source\repos\ResearchBase\ResearchBase\bin\Debug\ResearchBase.exe.config
+C:\Users\35193\source\repos\ResearchBase\ResearchBase\bin\Debug\ResearchBase.exe
+C:\Users\35193\source\repos\ResearchBase\ResearchBase\bin\Debug\ResearchBase.pdb
+C:\Users\35193\source\repos\ResearchBase\ResearchBase\bin\Debug\ResearchBase.xml
+C:\Users\35193\source\repos\ResearchBase\ResearchBase\obj\Debug\ResearchBase.exe
+C:\Users\35193\source\repos\ResearchBase\ResearchBase\obj\Debug\ResearchBase.xml
+C:\Users\35193\source\repos\ResearchBase\ResearchBase\obj\Debug\ResearchBase.pdb
+C:\Users\35193\source\repos\ResearchBase\ResearchBase\obj\Debug\ResearchBase.AdicionarEstudo.resources

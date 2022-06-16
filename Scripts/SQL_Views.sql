@@ -15,3 +15,10 @@ CREATE VIEW Lista_Participantes
 AS
 	(SELECT * FROM Participa_EC) UNION (SELECT * FROM Participa_EI)
 
+CREATE VIEW EC_Total
+AS
+	SELECT Estudo.Codigo, Titulo, Estado, Num_Part, Num_Vagas, Renum, CC_Inv, Phase_StartDate, Follow_Up, Num_Tomas, Cod_Tipo, Cod_Inf, Cod_CEIC, Cod_Proc FROM (Estudo JOIN Ensaio_Clinico ON Estudo.Codigo = Ensaio_Clinico.Codigo)
+
+CREATE VIEW EI_Total
+AS
+	SELECT Estudo.Codigo, Titulo, Estado, Num_Part, Num_Vagas, Renum, CC_Inv, Phase_StartDate, Cod_Tipo, Num_Sessoes FROM (Estudo JOIN Estudo_Investigacao ON Estudo.Codigo = Cod_Est)
