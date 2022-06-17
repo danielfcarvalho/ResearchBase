@@ -15,7 +15,7 @@ GO
 -- Incremento do número total de estudos de um Investigador associado a um novo Estudo
 
 GO
-CREATE TRIGGER insertStudy ON Estudo
+CREATE TRIGGER insertStudyTrigger ON Estudo
 AFTER INSERT
 AS
 	BEGIN
@@ -53,3 +53,5 @@ AS
 	END
 GO
 
+SELECT * FROM Estudo
+Delete from Estudo where Codigo = 21
