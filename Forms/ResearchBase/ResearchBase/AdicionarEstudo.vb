@@ -1,6 +1,18 @@
 ﻿Public Class AdicionarEstudo
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-
+        Codigo.Text = ""
+        Titulo.Text = ""
+        Num_Vagas.Text = ""
+        Renum.Text = ""
+        CC_Inv.Text = ""
+        Cod_Inf.Text = ""
+        Cod_CEIC.Text = ""
+        Cod_Proc.Text = ""
+        Num_Tomas.Text = ""
+        Num_Sessoes.Text = ""
+        Follow_up.SelectedValue = ""
+        Tipo_EC.SelectedValue = ""
+        Tipo_EI.SelectedValue = ""
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -34,8 +46,14 @@
             End If
         Next
 
-        Main.InsertIntoDB("insertStudy", dict)
+        Main.CallSP("insertStudy", dict, 1)
         Main.PopulateList(Estudos.DataGridView1, "SELECT * FROM Estudo")
         Hide()
+        Estudos.Hide()
+        Estudos.Show()
+    End Sub
+
+    Private Sub Follow_up_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Follow_up.SelectedIndexChanged
+
     End Sub
 End Class

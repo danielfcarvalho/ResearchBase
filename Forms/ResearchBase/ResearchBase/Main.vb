@@ -26,7 +26,7 @@ Public Class Main
         ' Dim userName = "p8g1"
         ' Dim userPass = "77036102477+yaskweenslay"
         ' Return New SqlConnection("Data Source = " + dbServer + " ;" + "Initial Catalog = " + dbName + "; uid = " + userName + ";" + "password = " + userPass)
-        Return New SqlConnection("data source=AFARTURPC\SQLEXPRESS;integrated security=true;initial catalog=ResearchBase")
+        Return New SqlConnection("data source=DESKTOP-80AK2K2\SQLEXPRESS;integrated security=true;initial catalog=ResearchBase")
     End Function
 
     Private Function VerifySGBDConnection()
@@ -60,7 +60,40 @@ Public Class Main
     End Sub
 
 
-    Public Sub InsertIntoDB(procedureName As String, parameters As Dictionary(Of String, Object))
+    Public Function CallSP(procedureName As String, parameters As Dictionary(Of String, Object), type As Int16)
+        ' 1 -> Executa uma SP sem return value (Apenas modifica tuplos na BD)
+        ' 2 -> Executa uma SP com return value
+        If Not VerifySGBDConnection() Then
+            Exit Function
+        End If
+
+        Try
+            CMD = New SqlCommand With {
+                .Connection = CN,
+                .CommandText = procedureName,
+                .CommandType = CommandType.StoredProcedure
+            }
+
+            For Each item In parameters
+                CMD.Parameters.AddWithValue(item.Key, item.Value)
+            Next
+
+            If type = 1 Then
+                CMD.ExecuteNonQuery()
+            Else
+                Dim myReturnValue As Int16 = CMD.ExecuteScalar
+                Debug.Write(myReturnValue)
+                Return myReturnValue
+            End If
+
+
+        Catch ex As Exception
+            Throw New Exception("Unexpected Error: " + ex.Message)
+        End Try
+
+    End Function
+
+    Public Sub PopulateListSP(grid As DataGridView, procedureName As String, parameters As Dictionary(Of String, Object))
         If Not VerifySGBDConnection() Then
             Exit Sub
         End If
@@ -75,13 +108,19 @@ Public Class Main
             For Each item In parameters
                 CMD.Parameters.AddWithValue(item.Key, item.Value)
             Next
+
             CMD.ExecuteNonQuery()
 
+            Dim adp As New SqlDataAdapter(CMD)
+            Dim dt As New DataTable()
+            adp.Fill(dt)
+            grid.DataSource = dt
         Catch ex As Exception
             Throw New Exception("Unexpected Error: " + ex.Message)
         End Try
 
     End Sub
+
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim form2 As New Estudos

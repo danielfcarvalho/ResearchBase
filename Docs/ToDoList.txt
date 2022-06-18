@@ -1,3 +1,5 @@
+Corrigir form de recrutamento quando número de vagas é atingido.
+
 PÁGINA DOS ESTUDOS E DO RECRUTAMENTO:
 
 TODO:
