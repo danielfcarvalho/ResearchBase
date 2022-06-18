@@ -31,6 +31,10 @@
         Main.PopulateList(DataGridView1, Estudo)
     End Sub
 
+    Public Sub Update_Estudos()
+        Main.PopulateList(DataGridView1, Estudo)
+    End Sub
+
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
 
     End Sub

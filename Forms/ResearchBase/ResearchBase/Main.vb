@@ -39,10 +39,9 @@ Public Class Main
         Return CN.State = ConnectionState.Open
     End Function
 
-    Public Function PopulateList(grid As DataGridView, text As String)
-
+    Public Sub PopulateList(grid As DataGridView, text As String)
         If Not VerifySGBDConnection() Then
-            Exit Function
+            Exit Sub
         End If
 
         Try
@@ -57,9 +56,32 @@ Public Class Main
         Catch ex As Exception
             Throw New Exception("Unexpected Error: " + ex.Message)
         End Try
-#Disable Warning BC42105 ' Function doesn't return a value on all code paths
-    End Function
-#Enable Warning BC42105 ' Function doesn't return a value on all code paths
+
+    End Sub
+
+
+    Public Sub InsertIntoDB(procedureName As String, parameters As Dictionary(Of String, Object))
+        If Not VerifySGBDConnection() Then
+            Exit Sub
+        End If
+
+        Try
+            CMD = New SqlCommand With {
+                .Connection = CN,
+                .CommandText = procedureName,
+                .CommandType = CommandType.StoredProcedure
+            }
+
+            For Each item In parameters
+                CMD.Parameters.AddWithValue(item.Key, item.Value)
+            Next
+            CMD.ExecuteNonQuery()
+
+        Catch ex As Exception
+            Throw New Exception("Unexpected Error: " + ex.Message)
+        End Try
+
+    End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim form2 As New Estudos
