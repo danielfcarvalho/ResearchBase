@@ -42,7 +42,6 @@
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         AdicionarEstudo.Show()
-        Hide()
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -66,7 +65,6 @@
             End If
 
             Recrutar.Show()
-            Hide()
         ElseIf selectedRowCount > 1 Then
             MessageBox.Show("Deve seleccionar apenas um estudo!")
             Exit Sub

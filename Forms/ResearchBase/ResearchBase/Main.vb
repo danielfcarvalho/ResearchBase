@@ -5,6 +5,7 @@ Public Class Main
     Dim CN As SqlConnection
     Dim CMD As SqlCommand
 
+    Public Form_Estudos As New Estudos
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CN = GetSGBDConnection()
         If VerifySGBDConnection() Then
@@ -26,7 +27,7 @@ Public Class Main
         ' Dim userName = "p8g1"
         ' Dim userPass = "77036102477+yaskweenslay"
         ' Return New SqlConnection("Data Source = " + dbServer + " ;" + "Initial Catalog = " + dbName + "; uid = " + userName + ";" + "password = " + userPass)
-        Return New SqlConnection("data source=DESKTOP-80AK2K2\SQLEXPRESS;integrated security=true;initial catalog=ResearchBase")
+        Return New SqlConnection("data source=AFARTURPC\SQLEXPRESS;integrated security=true;initial catalog=ResearchBase")
     End Function
 
     Private Function VerifySGBDConnection()
@@ -123,8 +124,7 @@ Public Class Main
 
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim form2 As New Estudos
-        form2.Show()
+        Form_Estudos.Show()
         Me.Hide()
     End Sub
 End Class

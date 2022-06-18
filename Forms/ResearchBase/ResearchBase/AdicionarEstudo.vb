@@ -49,8 +49,7 @@
         Main.CallSP("insertStudy", dict, 1)
         Main.PopulateList(Estudos.DataGridView1, "SELECT * FROM Estudo")
         Hide()
-        Estudos.Hide()
-        Estudos.Show()
+        Main.Form_Estudos.Update_Estudos()
     End Sub
 
     Private Sub Follow_up_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Follow_up.SelectedIndexChanged
