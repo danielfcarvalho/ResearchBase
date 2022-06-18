@@ -1,27 +1,9 @@
-Corrigir form de recrutamento quando número de vagas é atingido.
-
 PÁGINA DOS ESTUDOS E DO RECRUTAMENTO:
 
 TODO:
+-> Página para Ver Participantes -> Se fecharmos e voltarmos à pagina dos estudos,
+ao carregarmos num novo estudo para er os participantes aparece a info do estudo anterior
 -> Mudança de estado do estudo de 2->3: Pagar aos participantes do Estudo
 -> Adicionar Estudos (Fazer inser em Estudo e no subtipo)
 
-
-DONE:
-PROCESSO DE RECRUTAMENTO:
--> SP/View para apresentar os Participantes que obedecem aos critérios seleccionados 
-pelo Investigador.
-	-SP recebe como parâmetros: Gender, MinAge, MaxAge
-		- Confirmar que as idades são >0 e que MaxAge > MinAge
-	-Ensaios Clinicos: View com Participa_EC para apresentar apenas participantes
-que obedeçam à regra de 2 EC por anos e ao de remuneração por ano
-	Mostrar apenas participantes com análises clinicas em dia
-
--> Investigador selecciona um participante e carrega num botão Add para adicionar ao
-estudo
-	- SP para fazer insert do participante no estudo
-	- Incrementar o número de participantes no registo do estudo
-	- Se Nº de Participantes = Nº de vagas: Mostrar aviso
-	
--> Investigador clica no botão para finalizar recrutamento:
-	- Mudar o estado do estudo para Ativo
+-> Página dos Estudos: Não mostrar estudos quando o tipo não está seleccionado?

@@ -45,3 +45,6 @@ C:\Users\35193\Documents\BD_Guioes\Projeto\ResearchBase\Forms\ResearchBase\Resea
 C:\Users\35193\Documents\BD_Guioes\Projeto\ResearchBase\Forms\ResearchBase\ResearchBase\obj\Debug\ResearchBase.exe
 C:\Users\35193\Documents\BD_Guioes\Projeto\ResearchBase\Forms\ResearchBase\ResearchBase\obj\Debug\ResearchBase.xml
 C:\Users\35193\Documents\BD_Guioes\Projeto\ResearchBase\Forms\ResearchBase\ResearchBase\obj\Debug\ResearchBase.pdb
+C:\Users\danie\Documents\Universidade\LEI\2º Ano\2º Semestre\Bases de Dados\BD_P\ResearchBase\Forms\ResearchBase\ResearchBase\obj\Debug\ResearchBase.ParticipantesEstudo.resources
+C:\Users\danie\Documents\Universidade\LEI\2º Ano\2º Semestre\Bases de Dados\BD_P\ResearchBase\Forms\ResearchBase\ResearchBase\obj\Debug\ResearchBase.EditEC.resources
+C:\Users\danie\Documents\Universidade\LEI\2º Ano\2º Semestre\Bases de Dados\BD_P\ResearchBase\Forms\ResearchBase\ResearchBase\obj\Debug\ResearchBase.EditEI.resources

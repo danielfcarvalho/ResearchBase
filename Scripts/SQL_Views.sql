@@ -15,10 +15,17 @@ CREATE VIEW Lista_Participantes
 AS
 	(SELECT * FROM Participa_EC) UNION (SELECT * FROM Participa_EI)
 
+-- Vistas que apresentam a informação completa de Ensaios Clínicos e Estudos de Investigação (Junta os atributos da classes
+-- Estudo e das suas subclasses)
+
 CREATE VIEW EC_Total
 AS
 	SELECT Estudo.Codigo, Titulo, Estado, Num_Part, Num_Vagas, Renum, CC_Inv, Phase_StartDate, Follow_Up, Num_Tomas, Cod_Tipo, Cod_Inf, Cod_CEIC, Cod_Proc FROM (Estudo JOIN Ensaio_Clinico ON Estudo.Codigo = Ensaio_Clinico.Codigo)
 
 CREATE VIEW EI_Total
 AS
-	SELECT Estudo.Codigo, Titulo, Estado, Num_Part, Num_Vagas, Renum, CC_Inv, Phase_StartDate, Cod_Tipo, Num_Sessoes FROM (Estudo JOIN Estudo_Investigacao ON Estudo.Codigo = Cod_Est)
+	SELECT Estudo.Codigo, Titulo, Estado, Num_Part, Num_Vagas, Renum, CC_Inv, Phase_StartDate, Cod_Tipo, Num_Sessoes FROM (Estudo JOIN Estudo_Investigacao ON Estudo.Codigo = Cod_Est
+
+	SELECT ID, CC, Email, IBAN, NIF, Data_nasc, Genero, Localidade, Renum_Total, Idade, Cod_Analises, Cod_Consentimento FROM Lista_Participantes JOIN Participante ON ID = ID_Participante
+WHERE Cod_Estudo = 12
+

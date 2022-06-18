@@ -81,6 +81,6 @@
     ' Terminar Recrutamento
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         Hide()
-        Estudos.Show()
+        Main.Form_Estudos.Update_Estudos()
     End Sub
 End Class

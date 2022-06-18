@@ -83,6 +83,7 @@ AS
 		BEGIN
 			PRINT 'ERRO: O total de vagas para este estudo já foi preenchido!'
 			SET @Status = -1
+			SELECT @Status
 			RETURN @Status
 		END
 
@@ -90,6 +91,8 @@ AS
 	SET @Consent = SUBSTRING(CONVERT(VARCHAR(255), NEWID()), 0, 9);
 	INSERT INTO Participa_EI VALUES (@ID_Part, @Cod_Est, @Consent);
 	UPDATE Estudo SET Num_Part += 1 WHERE Codigo = @Cod_Est
+	SELECT @Status
+	RETURN @Status
 GO
 
 GO
@@ -104,12 +107,14 @@ AS
 		BEGIN
 			PRINT 'ERRO: O total de vagas para este estudo já foi preenchido!'
 			SET @Status = -1
+			SELECT @Status
 			RETURN @Status
 		END
 
 	DECLARE @Consent AS CHAR(8);
 	SET @Consent = SUBSTRING(CONVERT(VARCHAR(255), NEWID()), 0, 9);
 	INSERT INTO Participa_EC VALUES (@ID_Part, @Cod_Est, @Consent);
+	SELECT @Status
 GO
 
 -- MUDAR O ESTADO DE ESTUDO PARA ATIVO

@@ -85,6 +85,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CompanyDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="EditEC.Designer.vb">
+      <DependentUpon>EditEC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EditEC.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditEI.Designer.vb">
+      <DependentUpon>EditEI.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EditEI.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Main.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -124,10 +136,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ResearchBaseDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ParticipantesEstudo.Designer.vb">
+      <DependentUpon>ParticipantesEstudo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ParticipantesEstudo.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AdicionarEstudo.resx">
       <DependentUpon>AdicionarEstudo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditEC.resx">
+      <DependentUpon>EditEC.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditEI.resx">
+      <DependentUpon>EditEI.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.vb</DependentUpon>
@@ -140,6 +164,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParticipantesEstudo.resx">
+      <DependentUpon>ParticipantesEstudo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Recrutar.resx">
       <DependentUpon>Recrutar.vb</DependentUpon>

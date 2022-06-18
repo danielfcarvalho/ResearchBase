@@ -27,7 +27,8 @@ Public Class Main
         ' Dim userName = "p8g1"
         ' Dim userPass = "77036102477+yaskweenslay"
         ' Return New SqlConnection("Data Source = " + dbServer + " ;" + "Initial Catalog = " + dbName + "; uid = " + userName + ";" + "password = " + userPass)
-        Return New SqlConnection("data source=AFARTURPC\SQLEXPRESS;integrated security=true;initial catalog=ResearchBase")
+        ' Return New SqlConnection("data source=AFARTURPC\SQLEXPRESS;integrated security=true;initial catalog=ResearchBase")
+        Return New SqlConnection("data source=DESKTOP-80AK2K2\SQLEXPRESS;integrated security=true;initial catalog=ResearchBase")
     End Function
 
     Private Function VerifySGBDConnection()
@@ -82,9 +83,8 @@ Public Class Main
             If type = 1 Then
                 CMD.ExecuteNonQuery()
             Else
-                Dim myReturnValue As Int16 = CMD.ExecuteScalar
-                Debug.Write(myReturnValue)
-                Return myReturnValue
+                Dim status As Integer = CType(CMD.ExecuteScalar(), Integer)
+                Return status
             End If
 
 
@@ -125,6 +125,5 @@ Public Class Main
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Form_Estudos.Show()
-        Me.Hide()
     End Sub
 End Class
