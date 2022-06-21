@@ -12,6 +12,7 @@ WHERE Cod_Estudo = " + codigo.ToString)
     End Sub
 
     Private Sub Fechar_Click(sender As Object, e As EventArgs) Handles Fechar.Click
-        Hide()
+        Close()
     End Sub
+
 End Class

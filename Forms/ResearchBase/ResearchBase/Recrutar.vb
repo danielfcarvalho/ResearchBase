@@ -48,9 +48,11 @@
             Exit Sub
         Else
             For Each row As DataGridViewRow In DataGridView1.SelectedRows
+                status = Nothing
                 Dim dict As New Dictionary(Of String, Object) From {
                     {"@ID_Part", row.Cells("ID").Value},
-                    {"@Cod_Est", codigo}
+                    {"@Cod_Est", codigo},
+                    {"@status", status}
                 }
 
                 Dim l = dict.Keys.ToArray
@@ -68,7 +70,8 @@
                 End If
 
                 If status = 1 Then
-                    VagasBox.Text = VagasBox.Text - 1
+                    vagas -= 1
+                    VagasBox.Text = Convert.ToString(vagas)
                 ElseIf status = -1 Then
                     MessageBox.Show("ERRO: O total de vagas para este estudo já foi preenchido!")
                     Button2.Enabled = False
@@ -80,7 +83,31 @@
 
     ' Terminar Recrutamento
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        Hide()
-        Main.Form_Estudos.Update_Estudos()
+        Dim status As Int16
+
+        status = Nothing
+
+        Dim dict As New Dictionary(Of String, Object) From {
+                   {"@Cod_Est", codigo},
+                   {"@status", status}
+               }
+
+        Dim l = dict.Keys.ToArray
+
+        For Each key As String In l
+            If dict(key) Is "" Then
+                dict(key) = Nothing
+            End If
+        Next
+
+        status = Main.CallSP("finishRecruiting", dict, 2)
+
+        If status = -1 Then
+            MessageBox.Show("ERRO: O estudo ainda não tem participantes recrutados!")
+        Else
+            Hide()
+            Main.Form_Estudos.Update_Estudos()
+        End If
     End Sub
+
 End Class

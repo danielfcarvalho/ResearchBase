@@ -49,32 +49,32 @@ GO
 GO
 CREATE PROC Select_Valid_ParticipantsEC @MinAge INT = 18, @MaxAge INT = 120, @Gender CHAR = 'B'
 AS
-	IF @Gender = 'B'
-		BEGIN
-			SELECT Participante_EC.ID, CC, Email, IBAN, NIF, Genero, Localidade, Idade, Cod_Analises, AnnualStudies, AnnualPay
-			FROM Participante_EC JOIN 
-				(SELECT ID, COUNT(ID) AS AnnualStudies, SUM(Renum) AS AnnualPay
-				FROM Participante_EC WHERE (Idade BETWEEN @MinAge AND @MaxAge) AND Cod_Analises IS NOT NULL
-				GROUP BY ID
-				HAVING COUNT(ID) < 2 AND SUM(Renum) < 500) AS AnnualInfo ON Participante_EC.ID = AnnualInfo.ID
+    IF @Gender = 'B'
+        BEGIN
+            SELECT Participante.ID, CC, Email, IBAN, NIF, Genero, Localidade, Idade, Cod_Analises, AnnualStudies, AnnualPay
+            FROM Participante LEFT OUTER JOIN 
+                (SELECT *
+                FROM Participante_ECAnual)
+                AS AnnualInfo ON Participante.ID = AnnualInfo.ID
+            WHERE (Idade BETWEEN @MinAge AND @MaxAge) AND Cod_Analises IS NOT NULL AND ((AnnualStudies < 2 AND AnnualPay < 500) OR (AnnualStudies IS NULL AND AnnualPay IS NULL))
 
-		END
-	ELSE
-		BEGIN
-			SELECT Participante_EC.ID, CC, Email, IBAN, NIF, Genero, Localidade, Idade, Cod_Analises, AnnualStudies, AnnualPay
-			FROM Participante_EC JOIN 
-				(SELECT ID, COUNT(ID) AS AnnualStudies, SUM(Renum) AS AnnualPay
-				FROM Participante_EC WHERE (Idade BETWEEN @MinAge AND @MaxAge) AND (Cod_Analises IS NOT NULL) AND (Genero = @Gender)
-				GROUP BY ID
-				HAVING COUNT(ID) < 2 AND SUM(Renum) < 500) AS AnnualInfo ON Participante_EC.ID = AnnualInfo.ID
-		END	
+        END
+    ELSE
+        BEGIN
+            SELECT Participante.ID, CC, Email, IBAN, NIF, Genero, Localidade, Idade, Cod_Analises, AnnualStudies, AnnualPay
+            FROM Participante LEFT OUTER JOIN 
+                (SELECT *
+                FROM Participante_ECAnual) 
+                AS AnnualInfo ON Participante.ID = AnnualInfo.ID
+            WHERE (Idade BETWEEN @MinAge AND @MaxAge) AND Cod_Analises IS NOT NULL AND ((AnnualStudies < 2 AND AnnualPay < 500) OR (AnnualStudies IS NULL AND AnnualPay IS NULL)) AND (Genero = @Gender)
+        END    
 GO
 
 -- Recrutamento de um Participante para um Estudo
 GO
-CREATE PROC Add_ParticipantEI @ID_Part INT, @Cod_Est INT
+CREATE PROC Add_ParticipantEI @ID_Part INT, @Cod_Est INT, @status INT OUTPUT
 AS
-	DECLARE @Status AS INT, @NumPart AS INT, @Vagas AS INT
+	DECLARE @NumPart AS INT, @Vagas AS INT
 	SET @Status = 1
 
 	SELECT @NumPart = Num_Part, @Vagas =  Num_Vagas FROM Estudo WHERE Codigo = @Cod_Est
@@ -90,15 +90,14 @@ AS
 	DECLARE @Consent AS CHAR(8);
 	SET @Consent = SUBSTRING(CONVERT(VARCHAR(255), NEWID()), 0, 9);
 	INSERT INTO Participa_EI VALUES (@ID_Part, @Cod_Est, @Consent);
-	UPDATE Estudo SET Num_Part += 1 WHERE Codigo = @Cod_Est
 	SELECT @Status
 	RETURN @Status
 GO
 
 GO
-CREATE PROC Add_ParticipantEC @ID_Part INT, @Cod_Est INT
+CREATE PROC Add_ParticipantEC @ID_Part INT, @Cod_Est INT, @status INT OUTPUT
 AS
-	DECLARE @Status AS INT, @NumPart AS INT, @Vagas AS INT
+	DECLARE @NumPart AS INT, @Vagas AS INT
 	SET @Status = 1
 
 	SELECT @NumPart = Num_Part, @Vagas =  Num_Vagas FROM Estudo WHERE Codigo = @Cod_Est
@@ -115,14 +114,15 @@ AS
 	SET @Consent = SUBSTRING(CONVERT(VARCHAR(255), NEWID()), 0, 9);
 	INSERT INTO Participa_EC VALUES (@ID_Part, @Cod_Est, @Consent);
 	SELECT @Status
+	RETURN  @Status
 GO
 
 -- MUDAR O ESTADO DE ESTUDO PARA ATIVO
 
 GO
-CREATE PROC finishRecruiting @Cod_Est INT
+CREATE PROC finishRecruiting @Cod_Est INT, @status AS INT OUTPUT
 AS
-	DECLARE @Status AS INT, @NumPart AS INT, @Vagas AS INT
+	DECLARE @NumPart AS INT, @Vagas AS INT
 	SET @Status = 1
 
 	SELECT @NumPart = Num_Part FROM Estudo WHERE Codigo = @Cod_Est
@@ -131,10 +131,13 @@ AS
 		BEGIN
 			PRINT 'ERRO: O estudo ainda não tem participantes recrutados!'
 			SET @Status = -1
+			SELECT @status
 			RETURN @Status
 		END
 
 	UPDATE Estudo SET Estado = 2, Phase_StartDate = GETDATE() WHERE Codigo = @Cod_Est
+	SELECT @status
+	RETURN @Status
 GO
 
 -- MUDAR O ESTADO DO ESTUDO PARA COMPLETADO

@@ -6,7 +6,9 @@ AS
 
 CREATE VIEW Participante_ECAnual
 AS
-	SELECT * FROM (Participante LEFT OUTER JOIN Participa_EC ON ID = ID_Participante) JOIN EC_Anual ON Cod_Estudo = Codigo
+    SELECT ID, COUNT(ID) AS AnnualStudies, SUM(Renum) AS AnnualPay
+		FROM (Participante LEFT OUTER JOIN Participa_EC ON ID = ID_Participante) JOIN EC_Anual ON Cod_Estudo = Codigo
+		GROUP BY ID
 
 -- Vista que junta a lista de participantes de Ensaios Clinicos com a lista de participantes de Estudos de Investigação
 -- de maneira a permitir operações comuns a ambos os tipos de estudo
