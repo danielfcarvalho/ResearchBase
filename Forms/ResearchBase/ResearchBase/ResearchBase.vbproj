@@ -97,6 +97,18 @@
     <Compile Include="EditEI.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Investigador.Designer.vb">
+      <DependentUpon>Investigador.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Investigador.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InvestigadorStats.Designer.vb">
+      <DependentUpon>InvestigadorStats.vb</DependentUpon>
+    </Compile>
+    <Compile Include="InvestigadorStats.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Main.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +164,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditEI.resx">
       <DependentUpon>EditEI.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Investigador.resx">
+      <DependentUpon>Investigador.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InvestigadorStats.resx">
+      <DependentUpon>InvestigadorStats.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.vb</DependentUpon>

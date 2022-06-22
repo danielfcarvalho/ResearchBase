@@ -36,20 +36,18 @@ Partial Class ParticipantesEstudo
         'CodigoLabel
         '
         Me.CodigoLabel.AutoSize = True
-        Me.CodigoLabel.Location = New System.Drawing.Point(239, 25)
-        Me.CodigoLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.CodigoLabel.Location = New System.Drawing.Point(68, 20)
         Me.CodigoLabel.Name = "CodigoLabel"
-        Me.CodigoLabel.Size = New System.Drawing.Size(40, 16)
+        Me.CodigoLabel.Size = New System.Drawing.Size(35, 13)
         Me.CodigoLabel.TabIndex = 23
         Me.CodigoLabel.Text = "Título"
         '
         'NameLabel
         '
         Me.NameLabel.AutoSize = True
-        Me.NameLabel.Location = New System.Drawing.Point(79, 25)
-        Me.NameLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.NameLabel.Location = New System.Drawing.Point(210, 20)
         Me.NameLabel.Name = "NameLabel"
-        Me.NameLabel.Size = New System.Drawing.Size(40, 16)
+        Me.NameLabel.Size = New System.Drawing.Size(35, 13)
         Me.NameLabel.TabIndex = 22
         Me.NameLabel.Text = "Título"
         '
@@ -57,10 +55,9 @@ Partial Class ParticipantesEstudo
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(173, 25)
-        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label8.Location = New System.Drawing.Point(12, 20)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(63, 17)
+        Me.Label8.Size = New System.Drawing.Size(50, 13)
         Me.Label8.TabIndex = 21
         Me.Label8.Text = "Código:"
         '
@@ -68,10 +65,9 @@ Partial Class ParticipantesEstudo
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(13, 25)
-        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label7.Location = New System.Drawing.Point(154, 20)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(63, 17)
+        Me.Label7.Size = New System.Drawing.Size(50, 13)
         Me.Label7.TabIndex = 20
         Me.Label7.Text = "Estudo:"
         '
@@ -81,20 +77,18 @@ Partial Class ParticipantesEstudo
         Me.DataGridView1.AllowUserToDeleteRows = False
         Me.DataGridView1.AllowUserToOrderColumns = True
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(16, 58)
-        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.DataGridView1.Location = New System.Drawing.Point(12, 47)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersWidth = 51
-        Me.DataGridView1.Size = New System.Drawing.Size(1035, 444)
+        Me.DataGridView1.Size = New System.Drawing.Size(776, 361)
         Me.DataGridView1.TabIndex = 24
         '
         'Fechar
         '
-        Me.Fechar.Location = New System.Drawing.Point(951, 512)
-        Me.Fechar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Fechar.Location = New System.Drawing.Point(713, 416)
         Me.Fechar.Name = "Fechar"
-        Me.Fechar.Size = New System.Drawing.Size(100, 28)
+        Me.Fechar.Size = New System.Drawing.Size(75, 23)
         Me.Fechar.TabIndex = 25
         Me.Fechar.Text = "Fechar"
         Me.Fechar.UseVisualStyleBackColor = True
@@ -102,10 +96,9 @@ Partial Class ParticipantesEstudo
         'LabelParticipantes
         '
         Me.LabelParticipantes.AutoSize = True
-        Me.LabelParticipantes.Location = New System.Drawing.Point(973, 25)
-        Me.LabelParticipantes.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.LabelParticipantes.Location = New System.Drawing.Point(730, 20)
         Me.LabelParticipantes.Name = "LabelParticipantes"
-        Me.LabelParticipantes.Size = New System.Drawing.Size(40, 16)
+        Me.LabelParticipantes.Size = New System.Drawing.Size(35, 13)
         Me.LabelParticipantes.TabIndex = 27
         Me.LabelParticipantes.Text = "Título"
         '
@@ -113,18 +106,17 @@ Partial Class ParticipantesEstudo
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(784, 25)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Location = New System.Drawing.Point(588, 20)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(173, 17)
+        Me.Label2.Size = New System.Drawing.Size(136, 13)
         Me.Label2.TabIndex = 26
         Me.Label2.Text = "Total de Participantes:"
         '
         'ParticipantesEstudo
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1067, 554)
+        Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.LabelParticipantes)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Fechar)
@@ -133,7 +125,6 @@ Partial Class ParticipantesEstudo
         Me.Controls.Add(Me.NameLabel)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label7)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "ParticipantesEstudo"
         Me.Text = "VerParticipantesEstudo"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()

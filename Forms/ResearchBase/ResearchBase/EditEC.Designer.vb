@@ -22,22 +22,22 @@ Partial Class EditEC
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.CC_Inv = New System.Windows.Forms.TextBox()
-        Me.Renum = New System.Windows.Forms.TextBox()
-        Me.Num_Vagas = New System.Windows.Forms.TextBox()
-        Me.Titulo = New System.Windows.Forms.TextBox()
+        Me.CC_InvLabel = New System.Windows.Forms.TextBox()
+        Me.RenumLabel = New System.Windows.Forms.TextBox()
+        Me.Num_VagasLabel = New System.Windows.Forms.TextBox()
+        Me.TituloLabel = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.CodigoLabel = New System.Windows.Forms.TextBox()
-        Me.Follow_up = New System.Windows.Forms.ComboBox()
-        Me.Tipo_EC = New System.Windows.Forms.ComboBox()
-        Me.Num_Tomas = New System.Windows.Forms.TextBox()
-        Me.Cod_Proc = New System.Windows.Forms.TextBox()
-        Me.Cod_CEIC = New System.Windows.Forms.TextBox()
-        Me.Cod_Inf = New System.Windows.Forms.TextBox()
+        Me.Follow_upLabel = New System.Windows.Forms.ComboBox()
+        Me.Tipo_ECLabel = New System.Windows.Forms.ComboBox()
+        Me.Num_TomasLabel = New System.Windows.Forms.TextBox()
+        Me.Cod_ProcLabel = New System.Windows.Forms.TextBox()
+        Me.Cod_CEICLabel = New System.Windows.Forms.TextBox()
+        Me.Cod_InfLabel = New System.Windows.Forms.TextBox()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
@@ -47,37 +47,37 @@ Partial Class EditEC
         Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
-        'CC_Inv
+        'CC_InvLabel
         '
-        Me.CC_Inv.Location = New System.Drawing.Point(119, 58)
-        Me.CC_Inv.Margin = New System.Windows.Forms.Padding(2)
-        Me.CC_Inv.Name = "CC_Inv"
-        Me.CC_Inv.Size = New System.Drawing.Size(76, 20)
-        Me.CC_Inv.TabIndex = 29
+        Me.CC_InvLabel.Location = New System.Drawing.Point(119, 58)
+        Me.CC_InvLabel.Margin = New System.Windows.Forms.Padding(2)
+        Me.CC_InvLabel.Name = "CC_InvLabel"
+        Me.CC_InvLabel.Size = New System.Drawing.Size(76, 20)
+        Me.CC_InvLabel.TabIndex = 29
         '
-        'Renum
+        'RenumLabel
         '
-        Me.Renum.Location = New System.Drawing.Point(529, 212)
-        Me.Renum.Margin = New System.Windows.Forms.Padding(2)
-        Me.Renum.Name = "Renum"
-        Me.Renum.Size = New System.Drawing.Size(62, 20)
-        Me.Renum.TabIndex = 28
+        Me.RenumLabel.Location = New System.Drawing.Point(529, 212)
+        Me.RenumLabel.Margin = New System.Windows.Forms.Padding(2)
+        Me.RenumLabel.Name = "RenumLabel"
+        Me.RenumLabel.Size = New System.Drawing.Size(62, 20)
+        Me.RenumLabel.TabIndex = 28
         '
-        'Num_Vagas
+        'Num_VagasLabel
         '
-        Me.Num_Vagas.Location = New System.Drawing.Point(529, 177)
-        Me.Num_Vagas.Margin = New System.Windows.Forms.Padding(2)
-        Me.Num_Vagas.Name = "Num_Vagas"
-        Me.Num_Vagas.Size = New System.Drawing.Size(62, 20)
-        Me.Num_Vagas.TabIndex = 27
+        Me.Num_VagasLabel.Location = New System.Drawing.Point(529, 177)
+        Me.Num_VagasLabel.Margin = New System.Windows.Forms.Padding(2)
+        Me.Num_VagasLabel.Name = "Num_VagasLabel"
+        Me.Num_VagasLabel.Size = New System.Drawing.Size(62, 20)
+        Me.Num_VagasLabel.TabIndex = 27
         '
-        'Titulo
+        'TituloLabel
         '
-        Me.Titulo.Location = New System.Drawing.Point(57, 17)
-        Me.Titulo.Margin = New System.Windows.Forms.Padding(2)
-        Me.Titulo.Name = "Titulo"
-        Me.Titulo.Size = New System.Drawing.Size(286, 20)
-        Me.Titulo.TabIndex = 26
+        Me.TituloLabel.Location = New System.Drawing.Point(57, 17)
+        Me.TituloLabel.Margin = New System.Windows.Forms.Padding(2)
+        Me.TituloLabel.Name = "TituloLabel"
+        Me.TituloLabel.Size = New System.Drawing.Size(286, 20)
+        Me.TituloLabel.TabIndex = 26
         '
         'Label5
         '
@@ -131,64 +131,65 @@ Partial Class EditEC
         '
         'CodigoLabel
         '
+        Me.CodigoLabel.Enabled = False
         Me.CodigoLabel.Location = New System.Drawing.Point(529, 17)
         Me.CodigoLabel.Margin = New System.Windows.Forms.Padding(2)
         Me.CodigoLabel.Name = "CodigoLabel"
         Me.CodigoLabel.Size = New System.Drawing.Size(62, 20)
         Me.CodigoLabel.TabIndex = 20
         '
-        'Follow_up
+        'Follow_upLabel
         '
-        Me.Follow_up.AutoCompleteCustomSource.AddRange(New String() {"Yes", "No"})
-        Me.Follow_up.FormattingEnabled = True
-        Me.Follow_up.Items.AddRange(New Object() {"No", "Yes"})
-        Me.Follow_up.Location = New System.Drawing.Point(83, 225)
-        Me.Follow_up.Margin = New System.Windows.Forms.Padding(2)
-        Me.Follow_up.Name = "Follow_up"
-        Me.Follow_up.Size = New System.Drawing.Size(63, 21)
-        Me.Follow_up.TabIndex = 41
+        Me.Follow_upLabel.AutoCompleteCustomSource.AddRange(New String() {"Yes", "No"})
+        Me.Follow_upLabel.FormattingEnabled = True
+        Me.Follow_upLabel.Items.AddRange(New Object() {"No", "Yes"})
+        Me.Follow_upLabel.Location = New System.Drawing.Point(83, 225)
+        Me.Follow_upLabel.Margin = New System.Windows.Forms.Padding(2)
+        Me.Follow_upLabel.Name = "Follow_upLabel"
+        Me.Follow_upLabel.Size = New System.Drawing.Size(63, 21)
+        Me.Follow_upLabel.TabIndex = 41
         '
-        'Tipo_EC
+        'Tipo_ECLabel
         '
-        Me.Tipo_EC.FormattingEnabled = True
-        Me.Tipo_EC.Items.AddRange(New Object() {"1) Bioequivalência", "2) Interação Medicamentosa"})
-        Me.Tipo_EC.Location = New System.Drawing.Point(69, 181)
-        Me.Tipo_EC.Margin = New System.Windows.Forms.Padding(2)
-        Me.Tipo_EC.Name = "Tipo_EC"
-        Me.Tipo_EC.Size = New System.Drawing.Size(92, 21)
-        Me.Tipo_EC.TabIndex = 40
+        Me.Tipo_ECLabel.FormattingEnabled = True
+        Me.Tipo_ECLabel.Items.AddRange(New Object() {"1) Bioequivalência", "2) Interação Medicamentosa"})
+        Me.Tipo_ECLabel.Location = New System.Drawing.Point(69, 181)
+        Me.Tipo_ECLabel.Margin = New System.Windows.Forms.Padding(2)
+        Me.Tipo_ECLabel.Name = "Tipo_ECLabel"
+        Me.Tipo_ECLabel.Size = New System.Drawing.Size(92, 21)
+        Me.Tipo_ECLabel.TabIndex = 40
         '
-        'Num_Tomas
+        'Num_TomasLabel
         '
-        Me.Num_Tomas.Location = New System.Drawing.Point(285, 181)
-        Me.Num_Tomas.Margin = New System.Windows.Forms.Padding(2)
-        Me.Num_Tomas.Name = "Num_Tomas"
-        Me.Num_Tomas.Size = New System.Drawing.Size(40, 20)
-        Me.Num_Tomas.TabIndex = 39
+        Me.Num_TomasLabel.Location = New System.Drawing.Point(285, 181)
+        Me.Num_TomasLabel.Margin = New System.Windows.Forms.Padding(2)
+        Me.Num_TomasLabel.Name = "Num_TomasLabel"
+        Me.Num_TomasLabel.Size = New System.Drawing.Size(40, 20)
+        Me.Num_TomasLabel.TabIndex = 39
         '
-        'Cod_Proc
+        'Cod_ProcLabel
         '
-        Me.Cod_Proc.Location = New System.Drawing.Point(529, 114)
-        Me.Cod_Proc.Margin = New System.Windows.Forms.Padding(2)
-        Me.Cod_Proc.Name = "Cod_Proc"
-        Me.Cod_Proc.Size = New System.Drawing.Size(62, 20)
-        Me.Cod_Proc.TabIndex = 38
+        Me.Cod_ProcLabel.Location = New System.Drawing.Point(529, 114)
+        Me.Cod_ProcLabel.Margin = New System.Windows.Forms.Padding(2)
+        Me.Cod_ProcLabel.Name = "Cod_ProcLabel"
+        Me.Cod_ProcLabel.Size = New System.Drawing.Size(62, 20)
+        Me.Cod_ProcLabel.TabIndex = 38
         '
-        'Cod_CEIC
+        'Cod_CEICLabel
         '
-        Me.Cod_CEIC.Location = New System.Drawing.Point(529, 81)
-        Me.Cod_CEIC.Margin = New System.Windows.Forms.Padding(2)
-        Me.Cod_CEIC.Name = "Cod_CEIC"
-        Me.Cod_CEIC.Size = New System.Drawing.Size(62, 20)
-        Me.Cod_CEIC.TabIndex = 37
+        Me.Cod_CEICLabel.Location = New System.Drawing.Point(529, 81)
+        Me.Cod_CEICLabel.Margin = New System.Windows.Forms.Padding(2)
+        Me.Cod_CEICLabel.Name = "Cod_CEICLabel"
+        Me.Cod_CEICLabel.Size = New System.Drawing.Size(62, 20)
+        Me.Cod_CEICLabel.TabIndex = 37
         '
-        'Cod_Inf
+        'Cod_InfLabel
         '
-        Me.Cod_Inf.Location = New System.Drawing.Point(529, 47)
-        Me.Cod_Inf.Margin = New System.Windows.Forms.Padding(2)
-        Me.Cod_Inf.Name = "Cod_Inf"
-        Me.Cod_Inf.Size = New System.Drawing.Size(62, 20)
-        Me.Cod_Inf.TabIndex = 36
+        Me.Cod_InfLabel.Location = New System.Drawing.Point(529, 47)
+        Me.Cod_InfLabel.Margin = New System.Windows.Forms.Padding(2)
+        Me.Cod_InfLabel.Name = "Cod_InfLabel"
+        Me.Cod_InfLabel.Size = New System.Drawing.Size(62, 20)
+        Me.Cod_InfLabel.TabIndex = 36
         '
         'Label16
         '
@@ -265,22 +266,22 @@ Partial Class EditEC
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(599, 311)
         Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.Follow_up)
-        Me.Controls.Add(Me.Tipo_EC)
-        Me.Controls.Add(Me.Num_Tomas)
-        Me.Controls.Add(Me.Cod_Proc)
-        Me.Controls.Add(Me.Cod_CEIC)
-        Me.Controls.Add(Me.Cod_Inf)
+        Me.Controls.Add(Me.Follow_upLabel)
+        Me.Controls.Add(Me.Tipo_ECLabel)
+        Me.Controls.Add(Me.Num_TomasLabel)
+        Me.Controls.Add(Me.Cod_ProcLabel)
+        Me.Controls.Add(Me.Cod_CEICLabel)
+        Me.Controls.Add(Me.Cod_InfLabel)
         Me.Controls.Add(Me.Label16)
         Me.Controls.Add(Me.Label15)
         Me.Controls.Add(Me.Label14)
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.Label11)
-        Me.Controls.Add(Me.CC_Inv)
-        Me.Controls.Add(Me.Renum)
-        Me.Controls.Add(Me.Num_Vagas)
-        Me.Controls.Add(Me.Titulo)
+        Me.Controls.Add(Me.CC_InvLabel)
+        Me.Controls.Add(Me.RenumLabel)
+        Me.Controls.Add(Me.Num_VagasLabel)
+        Me.Controls.Add(Me.TituloLabel)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
@@ -294,22 +295,22 @@ Partial Class EditEC
 
     End Sub
 
-    Friend WithEvents CC_Inv As TextBox
-    Friend WithEvents Renum As TextBox
-    Friend WithEvents Num_Vagas As TextBox
-    Friend WithEvents Titulo As TextBox
+    Friend WithEvents CC_InvLabel As TextBox
+    Friend WithEvents RenumLabel As TextBox
+    Friend WithEvents Num_VagasLabel As TextBox
+    Friend WithEvents TituloLabel As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents CodigoLabel As TextBox
-    Friend WithEvents Follow_up As ComboBox
-    Friend WithEvents Tipo_EC As ComboBox
-    Friend WithEvents Num_Tomas As TextBox
-    Friend WithEvents Cod_Proc As TextBox
-    Friend WithEvents Cod_CEIC As TextBox
-    Friend WithEvents Cod_Inf As TextBox
+    Friend WithEvents Follow_upLabel As ComboBox
+    Friend WithEvents Tipo_ECLabel As ComboBox
+    Friend WithEvents Num_TomasLabel As TextBox
+    Friend WithEvents Cod_ProcLabel As TextBox
+    Friend WithEvents Cod_CEICLabel As TextBox
+    Friend WithEvents Cod_InfLabel As TextBox
     Friend WithEvents Label16 As Label
     Friend WithEvents Label15 As Label
     Friend WithEvents Label14 As Label
