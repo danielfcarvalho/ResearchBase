@@ -8,6 +8,7 @@ Public Class Main
     Public Form_Estudos As New Estudos
     Public Form_Participantes As New Participantes
     Public Form_EntPatronal As New EntidadePatronal
+    Public Form_Investigadores As New Investigador
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CN = GetSGBDConnection()
         If VerifySGBDConnection() Then
@@ -30,7 +31,7 @@ Public Class Main
         ' Dim userPass = "77036102477+yaskweenslay"
         ' Return New SqlConnection("Data Source = " + dbServer + " ;" + "Initial Catalog = " + dbName + "; uid = " + userName + ";" + "password = " + userPass)
         ' Return New SqlConnection("data source=AFARTURPC\SQLEXPRESS;integrated security=true;initial catalog=ResearchBase")
-        Return New SqlConnection("data source=AFARTURPC\SQLEXPRESS;integrated security=true;initial catalog=ResearchBase")
+        Return New SqlConnection("data source=DESKTOP-80AK2K2\SQLEXPRESS;integrated security=true;initial catalog=ResearchBase")
     End Function
 
     Private Function VerifySGBDConnection()
@@ -152,12 +153,43 @@ Public Class Main
             Dim dt As New DataTable()
             adp.Fill(dt)
             grid.DataSource = dt
+        Catch ex As SqlException
+            Dim errorMessage = ""
+            For Each e As SqlError In ex.Errors
+                errorMessage += e.Message
+            Next
+
+            MessageBox.Show(errorMessage, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         Catch ex As Exception
             Throw New Exception("Unexpected Error: " + ex.Message)
         End Try
 
     End Sub
 
+    Public Function FecthSimpleData(query As String)
+        If Not VerifySGBDConnection() Then
+            Exit Function
+        End If
+
+        Try
+            CMD = New SqlCommand With {
+                .Connection = CN,
+                .CommandText = query
+            }
+
+            Return CMD.ExecuteScalar()
+        Catch ex As SqlException
+            Dim errorMessage = ""
+            For Each e As SqlError In ex.Errors
+                errorMessage += e.Message
+            Next
+
+            MessageBox.Show(errorMessage, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        Catch ex As Exception
+            Throw New Exception("Unexpected Error: " + ex.Message)
+        End Try
+
+    End Function
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Form_Estudos.Show()
@@ -169,5 +201,8 @@ Public Class Main
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
         Form_EntPatronal.Show()
+        
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Form_Investigadores.Show()
     End Sub
 End Class

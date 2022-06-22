@@ -26,8 +26,6 @@ AS
 
 CREATE VIEW EI_Total
 AS
-	SELECT Estudo.Codigo, Titulo, Estado, Num_Part, Num_Vagas, Renum, CC_Inv, Phase_StartDate, Cod_Tipo, Num_Sessoes FROM (Estudo JOIN Estudo_Investigacao ON Estudo.Codigo = Cod_Est
+	SELECT Estudo.Codigo, Titulo, Estado, Num_Part, Num_Vagas, Renum, CC_Inv, Phase_StartDate, Cod_Tipo, Num_Sessoes FROM (Estudo JOIN Estudo_Investigacao ON Estudo.Codigo = Cod_Est)
 
-	SELECT ID, CC, Email, IBAN, NIF, Data_nasc, Genero, Localidade, Renum_Total, Idade, Cod_Analises, Cod_Consentimento FROM Lista_Participantes JOIN Participante ON ID = ID_Participante
-WHERE Cod_Estudo = 12
 

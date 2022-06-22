@@ -1,6 +1,5 @@
 ﻿Public Class AdicionarEstudo
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Codigo.Text = ""
         Titulo.Text = ""
         Num_Vagas.Text = ""
         Renum.Text = ""
@@ -18,7 +17,6 @@
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim sel_Est = Selecionar_Estudo.SelectedTab.Name
         Dim dict As New Dictionary(Of String, Object) From {
-            {"@Codigo", Codigo.Text},
             {"@Titulo", Titulo.Text},
             {"@Num_Vagas", Num_Vagas.Text},
             {"@Renum", Renum.Text},
@@ -46,13 +44,21 @@
             End If
         Next
 
-        Main.CallSP("insertStudy", dict, 1)
+        Dim status As Integer = Main.CallSP("insertStudy", dict, 2)
+
+        If status = -1 Then
+            MessageBox.Show("ERRO: É necessário preencher o campo do Título!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        ElseIf status = -2 Then
+            MessageBox.Show("ERRO: É necessário preencher o número de vagas!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        ElseIf status = -3 Then
+            MessageBox.Show("ERRO: É necessário atribuir uma Remuneração!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        ElseIf status = -4 Then
+            MessageBox.Show("ERRO: O Investigador associado deve estar inserido na Base de Dados!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        End If
+
         Main.PopulateList(Estudos.DataGridView1, "SELECT * FROM Estudo")
-        Hide()
+        Close()
         Main.Form_Estudos.Update_Estudos()
     End Sub
 
-    Private Sub Follow_up_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Follow_up.SelectedIndexChanged
-
-    End Sub
 End Class

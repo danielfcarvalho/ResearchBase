@@ -51,8 +51,6 @@ Partial Class AdicionarEstudo
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Codigo = New System.Windows.Forms.TextBox()
         Me.Selecionar_Estudo.SuspendLayout()
         Me.EC.SuspendLayout()
         Me.EI.SuspendLayout()
@@ -63,7 +61,7 @@ Partial Class AdicionarEstudo
         Me.Selecionar_Estudo.Controls.Add(Me.EC)
         Me.Selecionar_Estudo.Controls.Add(Me.EI)
         Me.Selecionar_Estudo.Location = New System.Drawing.Point(0, 143)
-        Me.Selecionar_Estudo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Selecionar_Estudo.Margin = New System.Windows.Forms.Padding(2)
         Me.Selecionar_Estudo.Name = "Selecionar_Estudo"
         Me.Selecionar_Estudo.SelectedIndex = 0
         Me.Selecionar_Estudo.Size = New System.Drawing.Size(601, 184)
@@ -84,9 +82,9 @@ Partial Class AdicionarEstudo
         Me.EC.Controls.Add(Me.Label12)
         Me.EC.Controls.Add(Me.Label11)
         Me.EC.Location = New System.Drawing.Point(4, 22)
-        Me.EC.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.EC.Margin = New System.Windows.Forms.Padding(2)
         Me.EC.Name = "EC"
-        Me.EC.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.EC.Padding = New System.Windows.Forms.Padding(2)
         Me.EC.Size = New System.Drawing.Size(593, 158)
         Me.EC.TabIndex = 0
         Me.EC.Text = "Ensaio Clínico"
@@ -98,7 +96,7 @@ Partial Class AdicionarEstudo
         Me.Follow_up.FormattingEnabled = True
         Me.Follow_up.Items.AddRange(New Object() {"No", "Yes"})
         Me.Follow_up.Location = New System.Drawing.Point(65, 71)
-        Me.Follow_up.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Follow_up.Margin = New System.Windows.Forms.Padding(2)
         Me.Follow_up.Name = "Follow_up"
         Me.Follow_up.Size = New System.Drawing.Size(92, 21)
         Me.Follow_up.TabIndex = 21
@@ -108,7 +106,7 @@ Partial Class AdicionarEstudo
         Me.Tipo_EC.FormattingEnabled = True
         Me.Tipo_EC.Items.AddRange(New Object() {"1) Bioequivalência", "2) Interação Medicamentosa"})
         Me.Tipo_EC.Location = New System.Drawing.Point(41, 11)
-        Me.Tipo_EC.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Tipo_EC.Margin = New System.Windows.Forms.Padding(2)
         Me.Tipo_EC.Name = "Tipo_EC"
         Me.Tipo_EC.Size = New System.Drawing.Size(92, 21)
         Me.Tipo_EC.TabIndex = 20
@@ -116,7 +114,7 @@ Partial Class AdicionarEstudo
         'Num_Tomas
         '
         Me.Num_Tomas.Location = New System.Drawing.Point(292, 11)
-        Me.Num_Tomas.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Num_Tomas.Margin = New System.Windows.Forms.Padding(2)
         Me.Num_Tomas.Name = "Num_Tomas"
         Me.Num_Tomas.Size = New System.Drawing.Size(76, 20)
         Me.Num_Tomas.TabIndex = 19
@@ -124,7 +122,7 @@ Partial Class AdicionarEstudo
         'Cod_Proc
         '
         Me.Cod_Proc.Location = New System.Drawing.Point(491, 121)
-        Me.Cod_Proc.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Cod_Proc.Margin = New System.Windows.Forms.Padding(2)
         Me.Cod_Proc.Name = "Cod_Proc"
         Me.Cod_Proc.Size = New System.Drawing.Size(76, 20)
         Me.Cod_Proc.TabIndex = 18
@@ -132,7 +130,7 @@ Partial Class AdicionarEstudo
         'Cod_CEIC
         '
         Me.Cod_CEIC.Location = New System.Drawing.Point(286, 121)
-        Me.Cod_CEIC.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Cod_CEIC.Margin = New System.Windows.Forms.Padding(2)
         Me.Cod_CEIC.Name = "Cod_CEIC"
         Me.Cod_CEIC.Size = New System.Drawing.Size(76, 20)
         Me.Cod_CEIC.TabIndex = 17
@@ -140,7 +138,7 @@ Partial Class AdicionarEstudo
         'Cod_Inf
         '
         Me.Cod_Inf.Location = New System.Drawing.Point(102, 121)
-        Me.Cod_Inf.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Cod_Inf.Margin = New System.Windows.Forms.Padding(2)
         Me.Cod_Inf.Name = "Cod_Inf"
         Me.Cod_Inf.Size = New System.Drawing.Size(76, 20)
         Me.Cod_Inf.TabIndex = 16
@@ -212,9 +210,9 @@ Partial Class AdicionarEstudo
         Me.EI.Controls.Add(Me.Label17)
         Me.EI.Controls.Add(Me.Label18)
         Me.EI.Location = New System.Drawing.Point(4, 22)
-        Me.EI.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.EI.Margin = New System.Windows.Forms.Padding(2)
         Me.EI.Name = "EI"
-        Me.EI.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.EI.Padding = New System.Windows.Forms.Padding(2)
         Me.EI.Size = New System.Drawing.Size(593, 158)
         Me.EI.TabIndex = 1
         Me.EI.Text = "Estudo Investigação"
@@ -225,7 +223,7 @@ Partial Class AdicionarEstudo
         Me.Tipo_EI.FormattingEnabled = True
         Me.Tipo_EI.Items.AddRange(New Object() {"1) Questionário", "2) Estudo de Grupo", "3) User Testing", "4) Simulação"})
         Me.Tipo_EI.Location = New System.Drawing.Point(50, 15)
-        Me.Tipo_EI.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Tipo_EI.Margin = New System.Windows.Forms.Padding(2)
         Me.Tipo_EI.Name = "Tipo_EI"
         Me.Tipo_EI.Size = New System.Drawing.Size(92, 21)
         Me.Tipo_EI.TabIndex = 24
@@ -233,7 +231,7 @@ Partial Class AdicionarEstudo
         'Num_Sessoes
         '
         Me.Num_Sessoes.Location = New System.Drawing.Point(310, 15)
-        Me.Num_Sessoes.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Num_Sessoes.Margin = New System.Windows.Forms.Padding(2)
         Me.Num_Sessoes.Name = "Num_Sessoes"
         Me.Num_Sessoes.Size = New System.Drawing.Size(76, 20)
         Me.Num_Sessoes.TabIndex = 23
@@ -261,7 +259,7 @@ Partial Class AdicionarEstudo
         'Button1
         '
         Me.Button1.Location = New System.Drawing.Point(484, 332)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(2)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(112, 24)
         Me.Button1.TabIndex = 3
@@ -271,7 +269,7 @@ Partial Class AdicionarEstudo
         'Button2
         '
         Me.Button2.Location = New System.Drawing.Point(368, 332)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(2)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(112, 24)
         Me.Button2.TabIndex = 4
@@ -281,7 +279,7 @@ Partial Class AdicionarEstudo
         'CC_Inv
         '
         Me.CC_Inv.Location = New System.Drawing.Point(118, 103)
-        Me.CC_Inv.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.CC_Inv.Margin = New System.Windows.Forms.Padding(2)
         Me.CC_Inv.Name = "CC_Inv"
         Me.CC_Inv.Size = New System.Drawing.Size(76, 20)
         Me.CC_Inv.TabIndex = 19
@@ -289,7 +287,7 @@ Partial Class AdicionarEstudo
         'Renum
         '
         Me.Renum.Location = New System.Drawing.Point(298, 103)
-        Me.Renum.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Renum.Margin = New System.Windows.Forms.Padding(2)
         Me.Renum.Name = "Renum"
         Me.Renum.Size = New System.Drawing.Size(76, 20)
         Me.Renum.TabIndex = 18
@@ -297,15 +295,15 @@ Partial Class AdicionarEstudo
         'Num_Vagas
         '
         Me.Num_Vagas.Location = New System.Drawing.Point(493, 103)
-        Me.Num_Vagas.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Num_Vagas.Margin = New System.Windows.Forms.Padding(2)
         Me.Num_Vagas.Name = "Num_Vagas"
         Me.Num_Vagas.Size = New System.Drawing.Size(76, 20)
         Me.Num_Vagas.TabIndex = 17
         '
         'Titulo
         '
-        Me.Titulo.Location = New System.Drawing.Point(248, 36)
-        Me.Titulo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Titulo.Location = New System.Drawing.Point(60, 31)
+        Me.Titulo.Margin = New System.Windows.Forms.Padding(2)
         Me.Titulo.Name = "Titulo"
         Me.Titulo.Size = New System.Drawing.Size(286, 20)
         Me.Titulo.TabIndex = 16
@@ -343,30 +341,12 @@ Partial Class AdicionarEstudo
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(211, 38)
+        Me.Label2.Location = New System.Drawing.Point(18, 34)
         Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(38, 13)
         Me.Label2.TabIndex = 12
         Me.Label2.Text = "Título:"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(20, 38)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(79, 13)
-        Me.Label1.TabIndex = 11
-        Me.Label1.Text = "Código Estudo:"
-        '
-        'Codigo
-        '
-        Me.Codigo.Location = New System.Drawing.Point(103, 36)
-        Me.Codigo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.Codigo.Name = "Codigo"
-        Me.Codigo.Size = New System.Drawing.Size(76, 20)
-        Me.Codigo.TabIndex = 10
         '
         'AdicionarEstudo
         '
@@ -381,12 +361,10 @@ Partial Class AdicionarEstudo
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.Codigo)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Selecionar_Estudo)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "AdicionarEstudo"
         Me.Text = "AdicionarEstudo"
         Me.Selecionar_Estudo.ResumeLayout(False)
@@ -427,7 +405,5 @@ Partial Class AdicionarEstudo
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Codigo As TextBox
     Friend WithEvents Follow_up As ComboBox
 End Class
