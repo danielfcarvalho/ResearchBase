@@ -107,6 +107,8 @@
       <DependentUpon>EntPatronalStats.vb</DependentUpon>
     </Compile>
     <Compile Include="EntPatronalStats.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Investigador.Designer.vb">
       <DependentUpon>Investigador.vb</DependentUpon>
     </Compile>
@@ -192,6 +194,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EntPatronalStats.resx">
       <DependentUpon>EntPatronalStats.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Investigador.resx">
       <DependentUpon>Investigador.vb</DependentUpon>
     </EmbeddedResource>
