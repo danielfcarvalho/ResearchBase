@@ -97,6 +97,18 @@
     <Compile Include="EditEI.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="EntidadePatronal.Designer.vb">
+      <DependentUpon>EntidadePatronal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EntidadePatronal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EntPatronalStats.Designer.vb">
+      <DependentUpon>EntPatronalStats.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EntPatronalStats.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Main.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +136,18 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Participantes.Designer.vb">
+      <DependentUpon>Participantes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Participantes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParticipantesStats.Designer.vb">
+      <DependentUpon>ParticipantesStats.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ParticipantesStats.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Recrutar.Designer.vb">
       <DependentUpon>Recrutar.vb</DependentUpon>
@@ -153,6 +177,12 @@
     <EmbeddedResource Include="EditEI.resx">
       <DependentUpon>EditEI.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EntidadePatronal.resx">
+      <DependentUpon>EntidadePatronal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EntPatronalStats.resx">
+      <DependentUpon>EntPatronalStats.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.vb</DependentUpon>
     </EmbeddedResource>
@@ -165,8 +195,14 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Participantes.resx">
+      <DependentUpon>Participantes.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ParticipantesEstudo.resx">
       <DependentUpon>ParticipantesEstudo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParticipantesStats.resx">
+      <DependentUpon>ParticipantesStats.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Recrutar.resx">
       <DependentUpon>Recrutar.vb</DependentUpon>

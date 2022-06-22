@@ -6,6 +6,8 @@ Public Class Main
     Dim CMD As SqlCommand
 
     Public Form_Estudos As New Estudos
+    Public Form_Participantes As New Participantes
+    Public Form_EntPatronal As New EntidadePatronal
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CN = GetSGBDConnection()
         If VerifySGBDConnection() Then
@@ -60,6 +62,31 @@ Public Class Main
         End Try
 
     End Sub
+
+    Public Function FecthSimpleData(query As String)
+        If Not VerifySGBDConnection() Then
+            Exit Function
+        End If
+
+        Try
+            CMD = New SqlCommand With {
+                .Connection = CN,
+                .CommandText = query
+            }
+
+            Return CMD.ExecuteScalar()
+        Catch ex As SqlException
+            Dim errorMessage = ""
+            For Each e As SqlError In ex.Errors
+                errorMessage += e.Message
+            Next
+
+            MessageBox.Show(errorMessage, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        Catch ex As Exception
+            Throw New Exception("Unexpected Error: " + ex.Message)
+        End Try
+
+    End Function
 
     Public Function CallSP(procedureName As String, parameters As Dictionary(Of String, Object), type As Int16)
         ' 1 -> Executa uma SP sem return value (Apenas modifica tuplos na BD)
@@ -134,5 +161,13 @@ Public Class Main
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Form_Estudos.Show()
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Form_Participantes.Show()
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        Form_EntPatronal.Show()
     End Sub
 End Class
