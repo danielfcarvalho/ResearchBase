@@ -57,3 +57,9 @@ C:\Users\35193\Documents\BD_Guioes\Projeto\ResearchBase\Forms\ResearchBase\Resea
 C:\Users\35193\Documents\BD_Guioes\Projeto\ResearchBase\Forms\ResearchBase\ResearchBase\obj\Debug\ResearchBase.EntPatronalStats.resources
 C:\Users\35193\Documents\BD_Guioes\Projeto\ResearchBase\Forms\ResearchBase\ResearchBase\obj\Debug\ResearchBase.Investigador.resources
 C:\Users\35193\Documents\BD_Guioes\Projeto\ResearchBase\Forms\ResearchBase\ResearchBase\obj\Debug\ResearchBase.InvestigadorStats.resources
+C:\Users\danie\Documents\Universidade\LEI\2º Ano\2º Semestre\Bases de Dados\BD_P\ResearchBase\Forms\ResearchBase\ResearchBase\obj\Debug\ResearchBase.EntidadePatronal.resources
+C:\Users\danie\Documents\Universidade\LEI\2º Ano\2º Semestre\Bases de Dados\BD_P\ResearchBase\Forms\ResearchBase\ResearchBase\obj\Debug\ResearchBase.EntPatronalStats.resources
+C:\Users\danie\Documents\Universidade\LEI\2º Ano\2º Semestre\Bases de Dados\BD_P\ResearchBase\Forms\ResearchBase\ResearchBase\obj\Debug\ResearchBase.Investigador.resources
+C:\Users\danie\Documents\Universidade\LEI\2º Ano\2º Semestre\Bases de Dados\BD_P\ResearchBase\Forms\ResearchBase\ResearchBase\obj\Debug\ResearchBase.InvestigadorStats.resources
+C:\Users\danie\Documents\Universidade\LEI\2º Ano\2º Semestre\Bases de Dados\BD_P\ResearchBase\Forms\ResearchBase\ResearchBase\obj\Debug\ResearchBase.Participantes.resources
+C:\Users\danie\Documents\Universidade\LEI\2º Ano\2º Semestre\Bases de Dados\BD_P\ResearchBase\Forms\ResearchBase\ResearchBase\obj\Debug\ResearchBase.ParticipantesStats.resources

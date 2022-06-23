@@ -25,12 +25,12 @@ Public Class Main
     End Sub
 
     Private Function GetSGBDConnection()
-        ' Dim dbServer = "tcp:mednat.ieeta.pt\\SQLSERVER,8101"
-        ' Dim dbName = "p8g1"
-        ' Dim userName = "p8g1"
-        ' Dim userPass = "77036102477+yaskweenslay"
-        ' Return New SqlConnection("Data Source = " + dbServer + " ;" + "Initial Catalog = " + dbName + "; uid = " + userName + ";" + "password = " + userPass)
-        Return New SqlConnection("data source=AFARTURPC\SQLEXPRESS;integrated security=true;initial catalog=ResearchBase")
+        Dim dbServer = "tcp:mednat.ieeta.pt\\SQLSERVER,8101"
+        Dim dbName = "p8g1"
+        Dim userName = "p8g1"
+        Dim userPass = "77036102477+yaskweenslay"
+        Return New SqlConnection("Data Source = " + dbServer + " ;" + "Initial Catalog = " + dbName + "; uid = " + userName + ";" + "password = " + userPass)
+        ' Return New SqlConnection("data source=AFARTURPC\SQLEXPRESS;integrated security=true;initial catalog=ResearchBase")
         ' Return New SqlConnection("data source=DESKTOP-80AK2K2\SQLEXPRESS;integrated security=true;initial catalog=ResearchBase")
     End Function
 

@@ -1,5 +1,3 @@
-SELECT * FROM EntPatronal
-
 GO
 CREATE PROC addEntPatronal(
 @Nome			   VARCHAR(100) = NULL,
@@ -33,9 +31,6 @@ GO
 CREATE PROC searchEntPatronal @Nome AS VARCHAR(100) AS
 SELECT * FROM EntPatronal WHERE Nome LIKE '%' + @Nome + '%'
 GO
-
-SELECT count(cc) FROM Estudo JOIN (SELECT Num_Registo, CC FROM EntPatronal JOIN Investigador ON Num_Registo = EntPatronal) AS Something ON CC_Inv = CC WHERE Num_Registo = 59
-SELECT * FROM Estudo
 
 -- NonClustered Index para percorrer por Nome
 CREATE INDEX nomeIndex ON EntPatronal (Nome)
