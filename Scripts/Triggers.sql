@@ -52,6 +52,3 @@ AS
 		UPDATE Estudo SET Num_Part = Num_Part + 1 WHERE Codigo = @Cod;
 	END
 GO
-
-SELECT * FROM Estudo
-Delete from Estudo where Codigo = 21

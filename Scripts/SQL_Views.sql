@@ -1,7 +1,9 @@
 -- Vistas sobre os Ensaios Clinicos realizados no último ano, e os Participantes destes estudos
 CREATE VIEW EC_Anual
 AS
-	SELECT Estudo.Codigo, Renum, Estado, Num_Part, Num_Vagas, CC_Inv, Phase_StartDate FROM (Estudo JOIN Ensaio_Clinico ON Estudo.Codigo = Ensaio_Clinico.Codigo) WHERE Phase_StartDate BETWEEN DATEFROMPARTS(YEAR(GETDATE()), 1, 1) AND GETDATE()
+	SELECT Estudo.Codigo, Renum, Estado, Num_Part, Num_Vagas, CC_Inv, Phase_StartDate 
+	FROM (Estudo JOIN Ensaio_Clinico ON Estudo.Codigo = Ensaio_Clinico.Codigo) 
+	WHERE Phase_StartDate BETWEEN DATEFROMPARTS(YEAR(GETDATE()), 1, 1) AND GETDATE()
 	
 
 CREATE VIEW Participante_ECAnual
@@ -27,5 +29,4 @@ AS
 CREATE VIEW EI_Total
 AS
 	SELECT Estudo.Codigo, Titulo, Estado, Num_Part, Num_Vagas, Renum, CC_Inv, Phase_StartDate, Cod_Tipo, Num_Sessoes FROM (Estudo JOIN Estudo_Investigacao ON Estudo.Codigo = Cod_Est)
-
 
